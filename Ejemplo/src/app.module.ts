@@ -27,7 +27,7 @@ export class AppModule implements NestModule {
         : void {
         consumer
             .apply(LogMiddleware)
-            .with(this.nombreAplicacion, 1989)
+            .with(this.nombreAplicacion, 1995)
             .forRoutes(
                 UsuarioController,
                 AppController,

@@ -75,7 +75,7 @@ export class ParametrosController {
             .send(usuarioCreado);
     }
     @Get('cookies/:nombre')
-    leerCookie(@Req request,@Res() response)
+    leerCookie(@Req() request,@Res() response)
     {
         const nombreCookie = request.params.nombre;
         const existeCookie = request.cookies[nombreCookie]
