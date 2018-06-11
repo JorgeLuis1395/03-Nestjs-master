@@ -4,9 +4,13 @@ const jwtPaquete = require('jsonwebtoken');
 export class JwtService {
     private readonly secreto = 'el sol no esta calentando';
     private readonly jwt = jwtPaquete;
+    private readonly tiempoVidaToken = '30s';
     emitirToken(payload: any){
         return this.jwt.sign(
-            payload, this.secreto
+            {
+                expiresIn: this.tiempoVidaToken, data: payload
+            },
+            this.secreto
         );
     }
     verificarToken(token: string, callback){
